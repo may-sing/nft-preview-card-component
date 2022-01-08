@@ -1,0 +1,181 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+/* Defining colors as variables */
+:root {
+    --softblue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --verydarkbluebg: hsl(217, 54%, 11%);
+    --verydarkbluecard: hsl(216, 50%, 16%);
+    --verydarkblueline: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+/* Resetting default values */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--verydarkbluebg);
+    font-family: 'Outfit', sans-serif;
+    
+}
+/* Using flexbox for layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    /* max-width: 20rem; */
+    margin: auto;
+}
+.container .card {
+    width: 87.6%;  /* Calculated as per the design image */
+    /* height: 200px; */
+    border-radius: 1rem;
+    background-color: var(--verydarkbluecard);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+.hero-image .main-image {
+    width: 100%; 
+    border-radius: 0.8rem;
+    
+}
+.hero-image {
+    padding: 1.2rem;
+    position: relative; /*Will place the overlay as absolute realtive to this class*/
+}
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 0.8rem;
+    background-color: var(--cyan);
+    opacity: 0;
+    transition: opacity 0.25s;
+    margin: 1.5rem 1.5rem 1.85rem 1.5rem;
+    display: flex; /* To center the view icon as a flex item*/
+    justify-content: center;
+    align-items: center;
+}
+
+.image-overlay:hover {
+    cursor: pointer;
+    background-color: rgba(0,255,255,0.5);
+    opacity: 1;
+}
+.main-content {
+    margin-top: -1.8rem;
+    padding-left: 1.2rem;
+}
+.main-content h1 {
+    font-size: 1.4rem;
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+}
+.main-content h1:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+.main-content p {
+    color: var(--softblue);
+    opacity: 70%;
+    line-height: 1.6;
+    font-size: 1.02rem;
+    font-weight: 400;
+    margin-top: -0.6rem;
+    font-weight: 300;
+}
+.extra-content {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    margin-top: -0.3rem;
+    font-size: 1rem;
+    
+}
+.extra-content li {
+    display: flex;
+    align-items: center; /* To align the image with the text on cross axis*/
+    font-weight: 400;
+}
+.text-1 {
+    color: var(--cyan);
+}
+.text-2 {
+    color: var(--softblue);  
+}
+.extra-content li img {
+    padding-right: 0.2rem;
+}
+hr {
+    width: 85%;
+    border: none;
+    height: 1px;
+    background-color: var(--verydarkblueline);
+    margin-top: 0;
+}
+.creation {
+    display: flex;
+    align-items: center;
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+    
+}
+.avatar {
+    width: 2em;
+    height: 2em;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    
+}
+.copyright {
+   margin-left: 1em;
+   color: var(--softblue);
+   font-size: 1rem;
+   font-weight: 400;
+}
+.author {
+    color: var(--white);
+}
+.author:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+.attribution {
+    color: var(--white);
+    opacity: 80%;
+    text-align: center;
+    margin-top: -4rem;
+    font-size: 1rem;
+    letter-spacing: 0.1ch;
+    line-height: 1.5;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 23.438rem) {
+    .container {
+        min-width: 23.438rem;
+    }
+    .attribution {
+        margin-top: 0;
+    }
+}
+@media only screen and (min-width: 23.438rem) {
+    .container {
+        max-width: 21.5rem;
+    }
+    .attribution {
+        margin-top: 0;
+    }
+    .image-overlay {
+        margin: 1.2rem 1.2rem 1.4rem 1.2rem;
+    }
+
+}
